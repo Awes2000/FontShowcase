@@ -1,0 +1,56 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/colors";
+
+.header {
+  width: 80vw;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: colors.$background;
+  padding: 4rem;
+
+  &__logo {
+    font-size: 200%;
+    color: #fbf8f1;
+    border: 0.2rem solid #54bad9;
+    border-radius: 50%;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    width: 8rem;
+    height: 8rem;
+    @include mixins.flexCenter;
+    background: #54bad9;
+
+    &:hover {
+      color: #54bad9;
+      background: transparent;
+      box-sizing: border-box;
+      @include mixins.rotate;
+    }
+  }
+
+  &__rightWrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: blue;
+
+    &:hover {
+      @include mixins.rotate(0.6s);
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
